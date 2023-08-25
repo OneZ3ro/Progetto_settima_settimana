@@ -15,7 +15,7 @@ const createProduct = (event) => {
     price: inputPrezzo,
     imageUrl: inputUrl,
   };
-  console.log(myProduct);
+  seeNewProduct(myProduct);
 };
 
 const seeNewProduct = async (myProduct) => {

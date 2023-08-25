@@ -55,5 +55,7 @@ const resetFunc = () => {
     document.getElementById("input-descriz").value = "";
     document.getElementById("input-prezzo").value = "";
     document.getElementById("input-url").value = "";
+  } else {
+    alert("Reset annullato");
   }
 };

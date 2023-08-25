@@ -42,7 +42,7 @@
     </header>
     <main>
       <div class="d-flex flex-column align-items-center">
-        <h1>Crea Nuovo Prodotto</h1>
+        <h1>Modifica Prodotto</h1>
         <form style="width: 50%" onsubmit="createProduct(event)">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"
@@ -103,7 +103,9 @@
           </div>
 
           <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-primary">Crea prodotto</button>
+            <button id="btn-mod" type="submit" class="btn btn-primary">
+              Modifica
+            </button>
             <button
               type="button"
               class="btn btn-secondary"
@@ -111,8 +113,8 @@
             >
               Torna a Back-Office
             </button>
-            <button type="button" class="btn btn-danger" onclick="resetFunc()">
-              Reset
+            <button id="btn-delete" type="button" class="btn btn-danger">
+              Elimina
             </button>
           </div>
         </form>
@@ -125,6 +127,6 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script src="create_product.js"></script>
+    <script src="mod_and_del_product.js"></script>
   </body>
 </html>

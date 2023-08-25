@@ -1,3 +1,4 @@
+const btnReset = document.getElementById("btn-reset");
 const createProduct = (event) => {
   event.preventDefault();
 
@@ -15,8 +16,6 @@ const createProduct = (event) => {
     imageUrl: inputUrl,
   };
   console.log(myProduct);
-
-  seeNewProduct(myProduct);
 };
 
 const seeNewProduct = async (myProduct) => {
@@ -45,4 +44,16 @@ const seeNewProduct = async (myProduct) => {
 
 const toBackOff = () => {
   window.location.assign("./index.html");
+};
+
+const resetFunc = () => {
+  const conferma = confirm("Sei sicuro di voler resettare il form?");
+
+  if (conferma) {
+    document.getElementById("input-nome").value = "";
+    document.getElementById("input-brand").value = "";
+    document.getElementById("input-descriz").value = "";
+    document.getElementById("input-prezzo").value = "";
+    document.getElementById("input-url").value = "";
+  }
 };

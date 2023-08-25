@@ -22,10 +22,9 @@ window.addEventListener("DOMContentLoaded", async () => {
       const { brand, description, imageUrl, name, price, _id } = parseBody[i];
       // console.log(imageUrl);
       const li = document.createElement("li");
-      li.className =
-        "list-group-item d-flex justify-content-between align-items-start";
+      li.className = "list-group-item d-flex flex-column";
       li.innerHTML = ` 
-        <div class="ms-2 me-auto">
+        <div class="d-flex justify-content-between align-items-center pb-2">
           <div class="fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal${i}">${name}</div>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal${i}" tabindex="-1" aria-labelledby="exampleModalLabel${i}" aria-hidden="true">
@@ -50,10 +49,21 @@ window.addEventListener("DOMContentLoaded", async () => {
               </div>
             </div>
           </div>
-
-          ${description}
+          <span class="badge bg-success rounded-pill align-self-end">${price}$</span>
         </div>
-      <span class="badge bg-primary rounded-pill">${price}$</span>
+
+        <div class="d-flex justify-content-between align-items-center">
+        ${description}
+          
+          <button
+              id="${_id}"
+              type="button"
+              class="btn btn-primary"
+              onclick="toModDelProduct(event)"
+            >
+              Modifica
+            </button>
+        </div>
      `;
       listaProdotti.appendChild(li);
     }
@@ -64,4 +74,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 const toCreateProduct = () => {
   window.location.assign("./create_product.html");
+};
+
+const toModDelProduct = (event) => {
+  window.location.assign(
+    "./mod_and_del_product.html?prodId=" + event.target.id
+  );
 };
